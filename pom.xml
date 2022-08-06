@@ -11,6 +11,7 @@
     <description>Learning Spring 5.0</description>
     <modules>
         <module>chapter01</module>
+        <module>chapter02</module>
     </modules>
 
     <name>learning-spring</name>
@@ -27,7 +28,8 @@
 <!--        <spring.version>5.3.22</spring.version>-->
         <spring.version>5.0.0.RELEASE</spring.version>
         <common-logging.version>1.2</common-logging.version>
-
+        <lombok.version>1.18.24</lombok.version>
+        <slf4j.version>1.7.25</slf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +48,18 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>${common-logging.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>compile</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
