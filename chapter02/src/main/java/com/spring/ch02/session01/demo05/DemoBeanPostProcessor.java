@@ -1,4 +1,4 @@
-package com.spring.ch02.demo05;
+package com.spring.ch02.session01.demo05;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

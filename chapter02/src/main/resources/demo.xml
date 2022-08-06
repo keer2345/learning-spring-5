@@ -6,9 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    <bean id="demo01" class="com.spring.ch02.demo01.DemoCustomInit" init-method="myInit" destroy-method="destroy"/>
-    <bean id="demo02" class="com.spring.ch02.demo02.DemoInitializingBean"/>
-    <bean id="demo03" class="com.spring.ch02.demo03.DemoDisposableBean"/>
-    <bean id="demo04" class="com.spring.ch02.demo04.MyBean"/>
-    <bean id="demo05" class="com.spring.ch02.demo05.DemoBeanPostProcessor"/>
+    <bean id="demo01" class="com.spring.ch02.session01.demo01.DemoCustomInit" init-method="myInit" destroy-method="destroy"/>
+    <bean id="demo02" class="com.spring.ch02.session01.demo02.DemoInitializingBean"/>
+    <bean id="demo03" class="com.spring.ch02.session01.demo03.DemoDisposableBean"/>
+    <bean id="demo04" class="com.spring.ch02.session01.demo04.MyBean"/>
+    <bean id="demo05" class="com.spring.ch02.session01.demo05.DemoBeanPostProcessor"/>
 </beans>

@@ -1,14 +1,14 @@
-package com.spring.ch02.demo05;
+package com.spring.ch02.session01.demo03;
 
-import com.spring.ch02.demo01.DemoCustomInit;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
   public static void main(String[] args) {
     ApplicationContext context = new ClassPathXmlApplicationContext("demo.xml");
-    DemoBeanPostProcessor bean = (DemoBeanPostProcessor) context.getBean("demo05");
+    DemoDisposableBean bean = (DemoDisposableBean) context.getBean("demo03");
     System.out.println(bean);
+    ((AbstractApplicationContext) context).registerShutdownHook();
   }
 }

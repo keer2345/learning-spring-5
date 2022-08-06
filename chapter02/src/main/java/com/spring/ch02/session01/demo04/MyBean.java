@@ -1,6 +1,6 @@
-package com.spring.ch02.demo04;
+package com.spring.ch02.session01.demo04;
 
-import com.spring.ch02.demo02.DemoInitializingBean;
+import com.spring.ch02.session01.demo02.DemoInitializingBean;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

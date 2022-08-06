@@ -1,4 +1,4 @@
-package com.spring.ch02.demo01;
+package com.spring.ch02.session01.demo01;
 
 import lombok.extern.slf4j.Slf4j;
 

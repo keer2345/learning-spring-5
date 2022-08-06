@@ -1,4 +1,4 @@
-package com.spring.ch02.demo04;
+package com.spring.ch02.session01.demo04;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
