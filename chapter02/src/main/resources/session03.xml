@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+">
+
+    <bean id="demo01" class="com.spring.ch02.session03.demo01.Car">
+        <property name="chesis_number" value="eng2012"/>
+        <property name="color" value="baker's chocolate"/>
+        <property name="fule_type" value="petrol"/>
+        <property name="average" value="12.50"/>
+        <property name="price" value="643800"/>
+    </bean>
+
+    <bean id="demo02" class="com.spring.ch02.session03.demo02.Car">
+        <constructor-arg value="eng2012"/>
+        <constructor-arg value="baker's chocolate"/>
+        <constructor-arg value="petrol"/>
+        <constructor-arg value="643600"/>
+        <constructor-arg value="12.50"/>
+    </bean>
+
+    <bean id="cust_address" class="com.spring.ch02.session03.demo03.Address">
+        <property name="build_no" value="2"/>
+        <property name="city_name" value="Pune"/>
+        <property name="pin_code" value="123"/>
+    </bean>
+
+    <!--    <bean id="customer" class="com.spring.ch02.session03.demo03.Customer">-->
+    <!--        <property name="cust_id" value="20"/>-->
+    <!--        <property name="cust_name" value="bobo"/>-->
+    <!--        <property name="cust_address" ref="cust_address"/>-->
+    <!--    </bean>-->
+    <bean id="customer" class="com.spring.ch02.session03.demo03.Customer" p:cust_id="2003" p:cust_name="baba"
+          p:cust_address-ref="cust_address"/>
+</beans>
