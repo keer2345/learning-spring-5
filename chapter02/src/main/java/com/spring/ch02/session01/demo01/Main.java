@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("demo.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("session01.xml");
     DemoCustomInit bean = (DemoCustomInit) context.getBean("demo01");
     System.out.println(bean);
     ((AbstractApplicationContext) context).registerShutdownHook();

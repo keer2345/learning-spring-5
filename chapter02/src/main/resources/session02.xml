@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="demo01" class="com.spring.ch02.session02.demo01.Car"/>
+
+    <bean id="demo02" class="com.spring.ch02.session02.demo02.CarFactory"/>
+    <bean id="car_obj_new" factory-bean="demo02" factory-method="buildCar"/>
+
+    <bean id="carService" class="com.spring.ch02.session02.demo03.CarService" factory-method="createService"/>
+</beans>

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
   public static void main(String[] args) {
-      ApplicationContext context=new ClassPathXmlApplicationContext("demo.xml");
+      ApplicationContext context=new ClassPathXmlApplicationContext("session01.xml");
       MyBean bean = (MyBean) context.getBean("demo04");
       bean.display();
   }
