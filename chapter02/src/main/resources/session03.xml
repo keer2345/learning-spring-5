@@ -33,6 +33,7 @@
         <constructor-arg value="12.50"/>
     </bean>
 
+    <!--ref-->
     <bean id="cust_address" class="com.spring.ch02.session03.demo03.Address">
         <property name="build_no" value="2"/>
         <property name="city_name" value="Pune"/>
@@ -44,6 +45,96 @@
     <!--        <property name="cust_name" value="bobo"/>-->
     <!--        <property name="cust_address" ref="cust_address"/>-->
     <!--    </bean>-->
+
+
+    <!--Configuring the inner beans-->
+    <!--    <bean id="customer" class="com.spring.ch02.session03.demo03.Customer">-->
+    <!--        <property name="cust_id" value="20"/>-->
+    <!--        <property name="cust_name" value="vovo"/>-->
+    <!--        <property name="cust_address">-->
+    <!--            <bean id="cust_address" class="com.spring.ch02.session03.demo03.Address">-->
+    <!--                <property name="build_no" value="2"/>-->
+    <!--                <property name="city_name" value="Pune"/>-->
+    <!--                <property name="pin_code" value="123"/>-->
+    <!--            </bean>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
+    <!--Namespace ''p'' for property-->
     <bean id="customer" class="com.spring.ch02.session03.demo03.Customer" p:cust_id="2003" p:cust_name="baba"
           p:cust_address-ref="cust_address"/>
+
+
+    <bean id="student" class="com.spring.ch02.session03.demo04.Student">
+        <property name="rollNo" value="34"/>
+        <property name="name" value="Sasha"/>
+    </bean>
+    <bean id="engg_old" class="com.spring.ch02.session03.demo04.EnggStudent">
+        <property name="rollNo" value="34"/>
+        <property name="name" value="Sasha"/>
+        <property name="branchCode" value="Comp230"/>
+        <property name="collegeCode" value="Clg_Eng_045"/>
+    </bean>
+
+    <bean id="engg_new" class="com.spring.ch02.session03.demo04.EnggStudent" parent="student">
+        <property name="branchCode" value="Comp230"/>
+        <property name="collegeCode" value="Clg_Eng_045"/>
+    </bean>
+
+    <bean id="engg_new1" class="com.spring.ch02.session03.demo04.EnggStudent" parent="student">
+        <property name="rollNo" value="40"/>
+        <property name="branchCode" value="Comp230"/>
+        <property name="collegeCode" value="Clg_Eng_045"/>
+    </bean>
+
+    <bean id="book1" class="com.spring.ch02.session03.demo05.Book">
+        <property name="isbn" value="20Novel"/>
+        <property name="book_name" value="princess Sindrella"/>
+        <property name="price" value="300"/>
+        <property name="publication" value="Packt-Pub"></property>
+    </bean>
+    <bean id="book2" class="com.spring.ch02.session03.demo05.Book">
+        <constructor-arg value="Java490"/>
+        <constructor-arg value="Core Java"/>
+        <constructor-arg value="300"/>
+        <constructor-arg value="Packt-Pub"/>
+    </bean>
+    <bean id="book3" class="com.spring.ch02.session03.demo05.Book"
+          p:isbn="200Autobiography"
+          p:book_name="Playing it in my way" p:price="300"
+          p:publication="Packt-Pub">
+    </bean>
+
+    <bean id="library_list" class="com.spring.ch02.session03.demo05.LibraryList">
+        <property name="books">
+            <list>
+                <ref bean="book1"/>
+                <ref bean="book2"/>
+                <ref bean="book3"/>
+                <ref bean="book3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="library_set" class="com.spring.ch02.session03.demo05.LibrarySet">
+        <property name="books">
+            <set>
+                <ref bean="book1"/>
+                <ref bean="book2"/>
+                <ref bean="book3"/>
+                <ref bean="book3"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="library_map" class="com.spring.ch02.session03.demo05.LibraryMap">
+        <property name="books">
+            <map>
+                <entry key="20Novel" value-ref="book1"/>
+                <entry key="200Autobiography" value-ref="book3"/>
+                <entry key="Java490" value-ref="book2"/>
+            </map>
+        </property>
+    </bean>
+
 </beans>

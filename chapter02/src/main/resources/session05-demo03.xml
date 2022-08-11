@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="cust_new" class="com.spring.ch02.session05.demo02.Customer">
+        <property name="cust_name" value="Bina"/>
+        <property name="cust_id" value="#{2}"/>
+        <property name="prod_name" value="#{'Samsung Fridge'}"/>
+        <property name="prod_price" value="#{27670.60}"/>
+        <property name="second_handed" value="#{false}"/>
+    </bean>
+    <bean id="cust_address" class="com.spring.ch02.session05.demo03.Address">
+        <property name="build_no" value="2"/>
+        <property name="city_name" value="Pune"/>
+        <property name="pin_code" value="123"/>
+    </bean>
+    <bean id="cust_ref" class="com.spring.ch02.session05.demo03.Customer_Ref">
+        <property name="cust_customer" value="#{cust_new}"/>
+        <property name="cust_address" value="#{cust_address}"/>
+    </bean>
+</beans>

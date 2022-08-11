@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="cust_new" class="com.spring.ch02.session05.demo02.Customer">
+        <property name="cust_name" value="Bina"/>
+        <property name="cust_id" value="#{2}"/>
+        <property name="prod_name" value="#{'Samsung Fridge'}"/>
+        <property name="prod_price" value="#{27670.50}"/>
+        <property name="second_handed" value="#{false}"/>
+    </bean>
+</beans>
